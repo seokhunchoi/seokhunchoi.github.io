@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Blending-NeRF perform natural editing to a source object by text prompts.">
-  <meta name="keywords" content="Blending-NeRF, BlendingNeRF, Blending, Localized Editing, 3D Editing, NeRF">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields</title>
-
+  <meta charset="utf-8">  
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5HMY6QM6S"></script>
@@ -18,6 +12,13 @@
 
     gtag('config', 'G-J5HMY6QM6S');
   </script>
+
+  <meta name="description"
+        content="Blending-NeRF perform localized 3D editing to a source object by text prompts.
+        It offers various modification options with explicitly predefined three types of editing operations: color change, density addition, and density removal.">
+  <meta name="keywords" content="blending nerf, Blending-NeRF, BlendingNeRF, Blending, Localized Editing, 3D Editing, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields</title>
   
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -201,7 +202,8 @@
         Blending-NeRF performs text-driven editing using the CLIP losses with both prompts. 
         However, using only the CLIP losses is not sufficient for localized editing as it does not serve to specify the target region. 
         Thus, during training, we specify the editing region in the original rendered scene using the source text. 
-        Simultaneously, the editable NeRF is trained to edit the target region under the guidance of localized editing objective.    
+        Simultaneously, the editable NeRF is trained to edit the target region under the guidance of localized editing objective.
+        For more details, please refer to our <a href="https://arxiv.org/abs/2308.11974"> paper</a>.
       </p>
     </div>
   </div>

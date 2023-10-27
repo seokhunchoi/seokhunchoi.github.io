@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Seokhun Choi</title>
+  
+  <meta name="author" content="Seokhun Choi">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <!-- Introduction -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Seokhun Choi</name>
+              </p>
+              <p>
+                I'm a research scientist at LG Electronics, where I'm a member of Generative AI team.
+                I received B.S. and M.S degrees in automotive engineering at Hanyang University in 2020 and 2022, respectively.          
+                During my Master’s program I studied vehicle control, perception and path prediction using deep learning, where I was advised by Prof. Kunsoo Huh. 
+              </p>
+              <p>
+                My research interests are in computer vision and generative AI, particularly interested in 2D/3D content generation and manipulation with diffusion models, Neural Radiance Fields (NeRF), etc.
+              </p>
+              <p style="text-align:center">
+                <a href="seokhun.choi@lge.com">Email</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?hl=en&user=uPzTtQMAAAAJ">Google Scholar</a> 
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/seokhun.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/seokhun.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+				
+<!-- Works listed here -->      
+<!-- Blending-NeRF -->
+<tr onmouseout="Blending_NeRF_stop()" onmouseover="Blending_NeRF_start()">
+    <td style="padding:20px;width:25%;vertical-align:middle">
+        <!-- IMAGES -->
+        <div class="one">
+          <div class="two" id="Blending_NeRF_under" style="opacity: 0; margin-top:50px">
+            <img src="images/Blending_NeRF.png" width="180">
+          </div>
+          <video width="115%" height="100%" muted="" autoplay="" loop="" id="Blending_NeRF_video" style="opacity: 1;">
+            <source src="images/Blending_NeRF.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- SCRIPT FOR HOVERING -->
+        <script type="text/javascript">
+          function Blending_NeRF_start() {
+            document.getElementById('Blending_NeRF_video').style.opacity = "0";
+            document.getElementById('Blending_NeRF_under').style.opacity = "1";
+          }
+    
+          function Blending_NeRF_stop() {
+            document.getElementById('Blending_NeRF_video').style.opacity = "1";
+            document.getElementById('Blending_NeRF_under').style.opacity = "0";
+          }
+          Blending_NeRF_stop()
+        </script>
+      </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <!-- TITLE -->
+    <a href="https://seokhunchoi.github.io/Blending-NeRF"><papertitle>Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields</papertitle></a>
+    <br>
+    <!-- AUTHORS -->
+    Hyeonseop Song*, <b>Seokhun Choi*</b>, Hoseok Do, Chul Lee, Taehyeong Kim
+    <br>
+    *Equal contribution
+    <!-- <br> -->
+    <!-- CONFERENCE -->
+    <br>
+    <em>ICCV</em>, 2023 - <a href="https://arxiv.org/abs/2308.11974">ArXiv</a> / <a href="https://seokhunchoi.github.io/Blending-NeRF">Project</a> / <a href="https://www.youtube.com/watch?v=vmz9HUlTR7E">Video</a>
+    <p></p>
+    <!-- SUMMARY -->
+    Blending-NeRF performs localized 3D editing to a source object by text prompts with explicitly predefined three types of editing operations: color change, density addition, and density removal.
+  </td>
+</tr>
+
+
+<!-- ipc-graspsim -->
+<tr onmouseout="vso_torque_stop()" onmouseover="vso_torque_start()">    
+    <td style="padding:20px;width:25%;vertical-align:middle">
+        <img src="images/vso_torque.png" alt="vso_torque" width="160" style="margin-left:10px">
+    </td>
+
+    <td style="padding:20px;width:75%;vertical-align:middle">
+        <!-- TITLE -->
+        <a href="https://scholar.google.com/scholar?oi=bibs&cluster=2722662180460101129&btnI=1&hl=en">
+        <papertitle>Vehicle speed optimization based on predicted traction torque using machine learning</papertitle>
+        </a>
+        <br>
+        <!-- AUTHORS -->
+        Byunggun Kim, Gihoon Kim, Yoonyong Ahn, Jihoon Sung, <b>Seokhun Choi</b>, Youngho Jun, Kunsoo Huh
+        <br>
+        <!-- Journal -->
+        <em>Transactions of the Korean Society of Automotive Engineers</em>, 2022 - <a href="http://journal.ksae.org/_common/do.php?a=full&b=22&bidx=2950&aidx=33148">Paper</a>
+        <p></p>
+        <!-- SUMMARY -->
+        We propose vehicle speed optimization method using network that predicts traction torque, which trained with real-world vehicle driving data.
+    </td>
+</tr>
+		  
+        </tbody></table>				
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:left;font-size:small;">
+                Source code for this page was taken from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>. 
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

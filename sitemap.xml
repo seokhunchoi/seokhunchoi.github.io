@@ -9,14 +9,402 @@
 
 <url>
   <loc>https://seokhunchoi.github.io/</loc>
-  <lastmod>2023-10-28T12:45:08+00:00</lastmod>
+  <lastmod>2023-10-28T14:30:08+00:00</lastmod>
   <priority>0.80</priority>
+
+  <image:image>
+    <image:loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/overview.png</image:loc>
+  </image:image>
+  
+  <image:image>
+    <image:loc>https://seokhunchoi.github.io/images/vso_torque.png</image:loc>
+  </image:image>
 </url>
 
 <url>
   <loc>https://seokhunchoi.github.io/Blending-NeRF/</loc>
-  <lastmod>2023-10-28T12:45:07+00:00</lastmod>
+  <lastmod>2023-10-28T14:30:07+00:00</lastmod>
   <priority>1.00</priority>
+
+  <!-- teaser -->
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/teaser/teaser.png</video:thumbnail_loc>
+    <video:title>teaser</video:title>
+    <video:description>
+      The teaser of Blending-NeRF
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/teaser.mp4
+    </video:content_loc>
+  </video:video>
+
+  <!-- etc -->
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/bulldozer.png</video:thumbnail_loc>
+    <video:title>bulldozer</video:title>
+    <video:description>
+      source object bulldozer
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/bulldozer.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/boat.png</video:thumbnail_loc>
+    <video:title>boat</video:title>
+    <video:description>
+      source object boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/brown-jar.png</video:thumbnail_loc>
+    <video:title>brown-jar</video:title>
+    <video:description>
+      source object brown-jar
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/brown-jar.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/hotdog.png</video:thumbnail_loc>
+    <video:title>hotdog</video:title>
+    <video:description>
+      source object hotdog
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/hotdog.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/green-chair.png</video:thumbnail_loc>
+    <video:title>green-chair</video:title>
+    <video:description>
+      source object green-chair
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/green-chair.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/mic.png</video:thumbnail_loc>
+    <video:title>mic</video:title>
+    <video:description>
+      source object mic
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/mic.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/bulldozer__porous_bulldozer.png</video:thumbnail_loc>
+    <video:title>porous bulldozer</video:title>
+    <video:description>
+      editing bulldozer into porous bulldozer
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/bulldozer__porous_bulldozer.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/boat__boat_exploding_with_a_lot_of_smoke_and_blue_flame.png</video:thumbnail_loc>
+    <video:title>boat exploding with a lot of smoke and blue flame</video:title>
+    <video:description>
+      editing boat into boat exploding with a lot of smoke and blue flame
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/boat__boat_exploding_with_a_lot_of_smoke_and_blue_flame.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/brown-jar__translucent_brown-jar.png</video:thumbnail_loc>
+    <video:title>translucent brown-jar</video:title>
+    <video:description>
+      editing brown-jar into translucent brown-jar
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/brown-jar__translucent_brown-jar.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/hotdog__oil_pastel_hotdog.png</video:thumbnail_loc>
+    <video:title>oil pastel hotdog</video:title>
+    <video:description>
+      editing hotdog into oil pastel hotdog
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/hotdog__oil_pastel_hotdog.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/green-chair__iron_throne.png</video:thumbnail_loc>
+    <video:title>iron throne</video:title>
+    <video:description>
+      editing green-chair into iron throne
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/green-chair__iron_throne.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/etc/mic__mic_amber.png</video:thumbnail_loc>
+    <video:title>mic amber</video:title>
+    <video:description>
+      editing mic into mic amber
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/etc/mic__mic_amber.mp4
+    </video:content_loc>
+  </video:video>
+
+  <!-- boat -->
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat.png</video:thumbnail_loc>
+    <video:title>boat</video:title>
+    <video:description>
+      source object boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__cyberpunk_neon_boat.png</video:thumbnail_loc>
+    <video:title>cyberpunk neon boat</video:title>
+    <video:description>
+      editing boat into cyberpunk neon boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__cyberpunk_neon_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__crystal_boat.png</video:thumbnail_loc>
+    <video:title>crystal boat</video:title>
+    <video:description>
+      editing boat into crystal boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__crystal_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__jelly_boat.png</video:thumbnail_loc>
+    <video:title>jelly boat</video:title>
+    <video:description>
+      editing boat into jelly boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__jelly_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__galaxy_big_bang_explosion_on_boat.png</video:thumbnail_loc>
+    <video:title>galaxy big bang explosion on boat</video:title>
+    <video:description>
+      editing boat into galaxy big bang explosion on boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__galaxy_big_bang_explosion_on_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__boat_attacked_by_octopus.png</video:thumbnail_loc>
+    <video:title>boat attacked by octopus</video:title>
+    <video:description>
+      editing boat into boat attacked by octopus
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__boat_attacked_by_octopus.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__firewood_on_fire_trending_on_artstation.png</video:thumbnail_loc>
+    <video:title>firewood on fire, trending on artstation</video:title>
+    <video:description>
+      editing boat into firewood on fire, trending on artstation
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__firewood_on_fire_trending_on_artstation.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__fireworks_on_boat.png</video:thumbnail_loc>
+    <video:title>fireworks on boat</video:title>
+    <video:description>
+      editing boat into fireworks on boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__fireworks_on_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__boat_inside_blackhole_a_DSLR_photo.png</video:thumbnail_loc>
+    <video:title>boat inside blackhole, a DSLR photo</video:title>
+    <video:description>
+      editing boat into boat inside blackhole, a DSLR photo
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__boat_inside_blackhole_a_DSLR_photo.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__shipwreck.png</video:thumbnail_loc>
+    <video:title>shipwreck</video:title>
+    <video:description>
+      editing boat into shipwreck
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__shipwreck.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__disappearing_boat.png</video:thumbnail_loc>
+    <video:title>disappearing boat</video:title>
+    <video:description>
+      editing boat into disappearing boat
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__disappearing_boat.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/boat/boat__ghost_ship.png</video:thumbnail_loc>
+    <video:title>ghost ship</video:title>
+    <video:description>
+      editing boat into ghost ship
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/boat/boat__ghost_ship.mp4
+    </video:content_loc>
+  </video:video>
+  
+  <!-- pinecone -->
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone.png</video:thumbnail_loc>
+    <video:title>pinecone</video:title>
+    <video:description>
+      source object pinecone
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone__pineapple_trending_on_artstation.png</video:thumbnail_loc>
+    <video:title>pineapple, trending on artstation</video:title>
+    <video:description>
+      editing pinecone into pineapple, trending on artstation
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone__pineapple_trending_on_artstation.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone__shining_diamond_pinecone_trending_on_artstation.png</video:thumbnail_loc>
+    <video:title>shining diamond pinecone, trending on artstation</video:title>
+    <video:description>
+      editing pinecone into shining diamond pinecone, trending on artstation
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone__shining_diamond_pinecone_trending_on_artstation.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone__snow_on_pinecone.png</video:thumbnail_loc>
+    <video:title>snow on pinecone</video:title>
+    <video:description>
+      editing pinecone into snow on pinecone
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone__snow_on_pinecone.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone__burning_pinecone.png</video:thumbnail_loc>
+    <video:title>burning pinecone</video:title>
+    <video:description>
+      editing pinecone into burning pinecone
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone__burning_pinecone.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/pinecone/pinecone__yard.png</video:thumbnail_loc>
+    <video:title>yard</video:title>
+    <video:description>
+      editing pinecone into yard
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/pinecone/pinecone__yard.mp4
+    </video:content_loc>
+  </video:video>
+
+  <!-- vasedeck -->
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/vasedeck.png</video:thumbnail_loc>
+    <video:title>vasedeck</video:title>
+    <video:description>
+      source object vasedeck
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/vasedeck.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/flower__swarovski_blue_crystal_flower_trending_on_artstation.png</video:thumbnail_loc>
+    <video:title>swarovski blue crystal flower, trending on artstation</video:title>
+    <video:description>
+      editing flower into swarovski blue crystal flower, trending on artstation
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/flower__swarovski_blue_crystal_flower_trending_on_artstation.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/flower__cyberpunk_neon_flower_highly_detailed.png</video:thumbnail_loc>
+    <video:title>cyberpunk neon flower, highly detailed"</video:title>
+    <video:description>
+      editing flower into cyberpunk neon flower, highly detailed"
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/flower__cyberpunk_neon_flower_highly_detailed.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/flower__burning_flower_a_DSLR_photo.png</video:thumbnail_loc>
+    <video:title>burning flower, a DSLR photo</video:title>
+    <video:description>
+      editing flower into burning flower, a DSLR photo
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/flower__burning_flower_a_DSLR_photo.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/flower__snow_on_flower.png</video:thumbnail_loc>
+    <video:title>snow on flower</video:title>
+    <video:description>
+      editing flower into snow on flower
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/flower__snow_on_flower.mp4
+    </video:content_loc>
+  </video:video>
+  <video:video>
+    <video:thumbnail_loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/thumbnails/vasedeck/flower__deck.png</video:thumbnail_loc>
+    <video:title>yard</video:title>
+    <video:description>
+      editing flower into deck
+    </video:description>
+    <video:content_loc>
+      https://seokhunchoi.github.io/Blending-NeRF/static/videos/vasedeck/flower__deck.mp4
+    </video:content_loc>
+  </video:video>
 </url>
 
 <url>

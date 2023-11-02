@@ -11,7 +11,6 @@
 
 <url>
   <loc>https://seokhunchoi.github.io/</loc>
-  <lastmod>2023-10-31T02:01:26+00:00</lastmod>
   <priority>0.80</priority>
 
   <image:image>
@@ -411,13 +410,11 @@
 
 <url>
   <loc>https://seokhunchoi.github.io/Blending-NeRF/static/pdf/BlendingNeRF_ICCV2023.pdf</loc>
-  <lastmod>2023-10-31T02:01:27+00:00</lastmod>
   <priority>1.0</priority>
 </url>
 
 <url>
   <loc>https://seokhunchoi.github.io/pdf/BlendingNeRF_poster.pdf</loc>
-  <lastmod>2023-10-31T02:01:26+00:00</lastmod>
   <priority>0.50</priority>
 </url>
 

@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">  
-    
+  <meta charset="utf-8">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5HMY6QM6S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-J5HMY6QM6S');
   </script>
 
   <meta name="description"
-        content="Project page of Blending-NeRF. Text-Driven Localized Editing in Neural Radiance Fields.">
+    content="Project page of Blending-NeRF. Text-Driven Localized Editing in Neural Radiance Fields.">
   <meta name="keywords" content="Blending NeRF, Blending, Localized Editing, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields</title>
-  
+
   <meta property="og:title" content="Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://seokhunchoi.github.io/Blending-NeRF/" />
   <meta property="og:site_name" content="Blending-NeRF" />
-  <meta property="og:image" content="https://seokhunchoi.github.io/Blending-NeRF/static/images/overview.png"/>
-  <meta property="og:description" content="Blending-NeRF performs localized 3D object editing to a source object by text prompts.">
+  <meta property="og:image" content="https://seokhunchoi.github.io/Blending-NeRF/static/images/overview.png" />
+  <meta property="og:description"
+    content="Blending-NeRF performs localized 3D object editing to a source object by text prompts.">
   <link rel="canonical" href="https://seokhunchoi.github.io/Blending-NeRF/" />
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -48,154 +48,163 @@
 
   <script>
     MathJax = {
-      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
     };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
   <style>
     .video-container {
-        display: flex;
+      display: flex;
     }
 
     .video {
-        width: 50%; /* Adjust the width as per your needs */
+      width: 50%;
+      /* Adjust the width as per your needs */
     }
-    
   </style>
-  
+
 </head>
+
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields</h1>          
-          <h2 class="title is-size-3" style="color:#6c767e;">ICCV 2023</h2>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Hyeonseop Song<sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              Seokhun Choi<sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              Hoseok Do<sup>1</sup>,
-            </span>
-            <span class="author-block">
-              Chul Lee<sup>1</sup>,
-            </span>
-            <span class="author-block">
-              Taehyeong Kim<sup>2</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <sup>1</sup>LG Electronics,            
-            </span>
-            <span class="author-block">
-              <sup>2</sup>Seoul National University,
-            </span>
-            <span class="author-block">
-              <sup>*</sup>Equal contribution
-            </span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <!-- <a href="https://arxiv.org/pdf/2308.11974" -->
-                <a href="static/pdf/BlendingNeRF_ICCV2023.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+            <h1 class="title is-1 publication-title">Blending-NeRF: Text-Driven Localized Editing in Neural Radiance
+              Fields</h1>
+            <div class="title is-size-3" style="color:#6c767e;">ICCV 2023</div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Hyeonseop Song<sup>1*</sup>,
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2308.11974"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+              <span class="author-block">
+                Seokhun Choi<sup>1*</sup>,
               </span>
-              <!-- Video Link. --> 
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=vmz9HUlTR7E"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
+              <span class="author-block">
+                Hoseok Do<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Chul Lee<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Taehyeong Kim<sup>2</sup>
               </span>
             </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>LG Electronics,
+              </span>
+              <span class="author-block">
+                <sup>2</sup>Seoul National University,
+              </span>
+              <span class="author-block">
+                <sup>*</sup>Equal contribution
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <!-- <a href="https://arxiv.org/pdf/2308.11974" -->
+                  <a href="static/pdf/BlendingNeRF_ICCV2023.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2308.11974" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=vmz9HUlTR7E"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Blending-NeRF is an innovative localized 3D editing method that enables users to perform natural modifications to a source object by text prompts. 
-        It offers various modification options with explicitly predefined three types of editing operations: color change, density addition, and density removal.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Text-driven localized editing of 3D objects is particularly difficult as locally mixing the original 3D object with the intended new object and style effects without distorting the object's form is not a straightforward process.
-            To address this issue, we propose a novel NeRF-based model, Blending-NeRF, which consists of two NeRF networks: pretrained NeRF and editable NeRF.
-            Additionally, we introduce new blending operations that allow Blending-NeRF to properly edit target regions which are localized by text.
-            By using a pretrained vision-language aligned model, CLIP, we guide Blending-NeRF to add new objects with varying colors and densities, modify textures, and remove parts of the original object.
-            Our extensive experiments demonstrate that Blending-NeRF produces naturally and locally edited 3D objects from various text prompts.
-          </p>
-        </div>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h3 class="subtitle has-text-centered">
+          Blending-NeRF is an innovative localized 3D editing method that enables users to perform natural modifications
+          to a source object by text prompts.
+          It offers various modification options with explicitly predefined three types of editing operations: color
+          change, density addition, and density removal.
+        </h3>
       </div>
     </div>
-    <!--/ Abstract. -->
+  </section>
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/vmz9HUlTR7E?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Text-driven localized editing of 3D objects is particularly difficult as locally mixing the original 3D
+              object with the intended new object and style effects without distorting the object's form is not a
+              straightforward process.
+              To address this issue, we propose a novel NeRF-based model, Blending-NeRF, which consists of two NeRF
+              networks: pretrained NeRF and editable NeRF.
+              Additionally, we introduce new blending operations that allow Blending-NeRF to properly edit target
+              regions which are localized by text.
+              By using a pretrained vision-language aligned model, CLIP, we guide Blending-NeRF to add new objects with
+              varying colors and densities, modify textures, and remove parts of the original object.
+              Our extensive experiments demonstrate that Blending-NeRF produces naturally and locally edited 3D objects
+              from various text prompts.
+            </p>
+          </div>
         </div>
       </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/vmz9HUlTR7E?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen
+              title="Demo video for Blending NeRF, ICCV 2023"></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
     </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
+  </section>
 
 
 
-<!-- 
+  <!-- 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content has-text-justified">
@@ -225,500 +234,538 @@
 </section> -->
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="content has-text-justified">
-      <h2 class="title is-3 has-text-centered"><p>Method Overview</p></h2>
-      <div class="has-text-centered">
-        <img style="width: 100%;" src="static/images/overview.png"
-            alt="Blending-NeRF architecture."/>
-      </div>
-      <p>
-        We propose Blending-NeRF, which consists of pretrained NeRF $f_\theta$ for the original 3D model and editable NeRF $g_\phi$ for object editing. 
-        The weight parameter $\theta$ is frozen, and $\phi$ is learnable. 
-        The edited scene is synthesized by blending the volumetric information of two NeRFs.
-        We use two kinds of natural language prompts: source text $T_{\text{source}}$ and target text $T_{\text{target}}$, describing the original and edited 3D model, respectively. 
-        Blending-NeRF performs text-driven editing using the CLIP losses with both prompts. 
-        However, using only the CLIP losses is not sufficient for localized editing as it does not serve to specify the target region. 
-        Thus, during training, we specify the editing region in the original rendered scene using the source text. 
-        Simultaneously, the editable NeRF is trained to edit the target region under the guidance of localized editing objective.
-        For more details, please refer to our <a href="https://arxiv.org/abs/2308.11974"> paper</a>.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- synthetic object -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">      
-    <!-- <div class="container" style="width: 70%"> -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Editing on Synthetic Objects</h2>
-      </div>
-      <div id="results-synthetic-object1" class="video-container">
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_bulldozer1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/bulldozer.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"bulldozer"</i> (source)
-          </h2>
-        </div>
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_boat1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"boat"</i> (source)
-          </h2>
-        </div>
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_brown-jar1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/brown-jar.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"brown-jar"</i> (source)
-          </h2>
-        </div>
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_hotdog1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/hotdog.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"hotdog"</i> (source)
-          </h2>
-        </div>
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_green-chair1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/green-chair.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"green-chair"</i> (source)
-          </h2>
-        </div>
-        <div class="col-3">
-          <video poster="" preload="none" id="video_synthetic_object_mic1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/mic.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"mic"</i> (source)
-          </h2>
-        </div>
-      </div>
-      <br>
-      <br>
-
-      <div id="results-synthetic-object2" class="video-container">
-        <div class="item item-video7">
-          <img src="static/images/remove.png" style="max-width:20%; height:auto;" alt="editing operation (density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_bulldozer2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/bulldozer__porous_bulldozer.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"porous bulldozer"</i>
-          </h2>
-        </div>
-        <div class="item item-video8">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boat2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/boat__boat_exploding_with_a_lot_of_smoke_and_blue_flame.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"boat exploding with a lot of smoke and blue flame"</i>
-          </h2>
-        </div>
-        <div class="item item-video9">
-          <img src="static/images/remove.png" style="max-width:20%; height:auto;" alt="editing operation (density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_brown-jar2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/brown-jar__translucent_brown-jar.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"translucent brown-jar"</i>
-          </h2>
-        </div>
-        <div class="item item-video10">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_synthetic_object_hotdog2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/hotdog__oil_pastel_hotdog.mp4" 
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"oil pastel hotdog"</i>
-          </h2>
-        </div>
-        <div class="item item-video11">
-          <img src="static/images/add.png" style="max-width:20%; height:auto;" alt="editing operation (density addition)" />
-          <video poster="" preload="none" id="video_synthetic_object_green-chair2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/green-chair__iron_throne.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"iron throne"</i>
-          </h2>
-        </div>
-        <div class="item item-video12">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_mic2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/etc/mic__mic_amber.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"mic amber"</i>
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- synthetic object -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">      
-    <!-- <div class="container" style="width: 70%"> -->
-      <div id="results-synthetic-object1" class="video-container">
-        <div class="item item-video13">
-          <img src="static/images/nothing.png" style="max-width:20%; height:auto;" alt="editing operation (nothing)"/>
-          <video poster="" preload="none" id="video_synthetic_object_boats1" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"boat"</i> (source)
-          </h2>
-        </div>
-        <div class="item item-video14">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats2" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__cyberpunk_neon_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"cyberpunk neon boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video15">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats3" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__crystal_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"crystal boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video16">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats4" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__jelly_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"jelly boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video17">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats5" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__galaxy_big_bang_explosion_on_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"galaxy big bang <br> explosion on boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video18">
-          <img src="static/images/add_remove.png" style="max-width:20%; height:auto;" alt="editing operation (density addition + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats6" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__boat_attacked_by_octopus.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"boat attacked by octopus"</i>
-          </h2>
-        </div>
-      </div>
-      <br>
-      <br>
-
-      <div id="results-synthetic-object2" class="video-container">
-        <div class="item item-video19">
-          <img src="static/images/add_remove.png" style="max-width:20%; height:auto;" alt="editing operation (density addition + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats7" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__firewood_on_fire_trending_on_artstation.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"firewood on fire, trending on artstation"</i>
-          </h2>
-        </div>
-        <div class="item item-video20">
-          <img src="static/images/add_remove.png" style="max-width:20%; height:auto;" alt="editing operation (density addition + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats8" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__fireworks_on_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"fireworks on boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video21">
-          <img src="static/images/add_remove.png" style="max-width:20%; height:auto;" alt="editing operation (density addition + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats9" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__boat_inside_blackhole_a_DSLR_photo.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"boat inside blackhole, a DSLR photo"</i>
-          </h2>
-        </div>
-        <div class="item item-video22">
-          <img src="static/images/change_remove.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats10" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__shipwreck.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"shipwreck"</i>
-          </h2>
-        </div>
-        <div class="item item-video23">
-          <img src="static/images/remove.png" style="max-width:20%; height:auto;" alt="editing operation (density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats11" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__disappearing_boat.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"disappearing boat"</i>
-          </h2>
-        </div>
-        <div class="item item-video24">
-          <img src="static/images/add_change_remove.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density addition + density removal)" />
-          <video poster="" preload="none" id="video_synthetic_object_boats12" autoplay muted loop height="90%" width="90%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/boat/boat__ghost_ship.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"ghost ship"</i>
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- synthetic object -->
-
-
-<!-- real world scene -->
-<section class="hero is-small">
-  <div class="hero-body">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Editing on Real-World Scenes</h2>
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">
+          <p>Method Overview</p>
+        </h2>
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/overview.png" alt="Blending-NeRF architecture." />
+        </div>
+        <p>
+          We propose Blending-NeRF, which consists of pretrained NeRF $f_\theta$ for the original 3D model and editable
+          NeRF $g_\phi$ for object editing.
+          The weight parameter $\theta$ is frozen, and $\phi$ is learnable.
+          The edited scene is synthesized by blending the volumetric information of two NeRFs.
+          We use two kinds of natural language prompts: source text $T_{\text{source}}$ and target text
+          $T_{\text{target}}$, describing the original and edited 3D model, respectively.
+          Blending-NeRF performs text-driven editing using the CLIP losses with both prompts.
+          However, using only the CLIP losses is not sufficient for localized editing as it does not serve to specify
+          the target region.
+          Thus, during training, we specify the editing region in the original rendered scene using the source text.
+          Simultaneously, the editable NeRF is trained to edit the target region under the guidance of localized editing
+          objective.
+          For more details, please refer to our <a href="https://arxiv.org/abs/2308.11974"> paper</a>.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">      
-    <!-- <div class="container" style="width: 70%"> -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-5">pinecone</h2>
-      </div>
-      <div id="results-real-scene-pinecone1" class="video-container">
-        <div class="item item-video25" style="margin-right: 0.5vw">
-          <img src="static/images/nothing.png" style="max-width:20%; height:auto;" alt="editing operation (nothing)"/>
-          <video poster="" preload="none" id="video_real_scene_pinecone0" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"pinecone" </i> (source)
-          </h2>
+  <!-- synthetic object -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <!-- <div class="container" style="width: 70%"> -->
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Editing on Synthetic Objects</h2>
         </div>
-        <div class="item item-video26" style="margin-right: 0.5vw">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_real_scene_pinecone1" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone__pineapple_trending_on_artstation.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"pineapple, trending on artstation"</i>
-          </h2>
+        <div id="results-synthetic-object1" class="video-container">
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_bulldozer1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/bulldozer.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"bulldozer"</i> (source)
+            </h3>
+          </div>
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_boat1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"boat"</i> (source)
+            </h3>
+          </div>
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_brown-jar1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/brown-jar.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"brown-jar"</i> (source)
+            </h3>
+          </div>
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_hotdog1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/hotdog.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"hotdog"</i> (source)
+            </h3>
+          </div>
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_green-chair1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/green-chair.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"green-chair"</i> (source)
+            </h3>
+          </div>
+          <div class="col-3">
+            <video poster="" preload="none" id="video_synthetic_object_mic1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/mic.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"mic"</i> (source)
+            </h3>
+          </div>
         </div>
-        <div class="item item-video27" style="margin-right: 0.5vw">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_real_scene_pinecone2" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone__shining_diamond_pinecone_trending_on_artstation.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"shining diamond pinecone, trending on artstation"</i>
-          </h2>
-        </div>
-        <div class="item item-video28" style="margin-right: 0.5vw">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_real_scene_pinecone3" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone__snow_on_pinecone.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"snow on pinecone"</i>
-          </h2>
-        </div>
-        <div class="item item-video29" style="margin-right: 0.5vw">
-          <img src="static/images/add.png" style="max-width:20%; height:auto;" alt="editing operation (density addition)" />
-          <video poster="" preload="none" id="video_real_scene_pinecone4" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone__burning_pinecone.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"burning pinecone"</i>
-          </h2>
-        </div>
-        <div class="item item-video30" style="margin-right: 0.5vw">
-          <img src="static/images/remove.png" style="max-width:20%; height:auto;" alt="editing operation (density removal)" />
-          <video poster="" preload="none" id="video_real_scene_pinecone5" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/pinecone/pinecone__yard.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"yard "</i>
-          </h2>
+        <br>
+        <br>
+
+        <div id="results-synthetic-object2" class="video-container">
+          <div class="item item-video7">
+            <img src="static/images/remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_bulldozer2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/bulldozer__porous_bulldozer.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"porous bulldozer"</i>
+            </h3>
+          </div>
+          <div class="item item-video8">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boat2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/boat__boat_exploding_with_a_lot_of_smoke_and_blue_flame.mp4"
+                type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"boat exploding with a lot of smoke and blue flame"</i>
+            </h3>
+          </div>
+          <div class="item item-video9">
+            <img src="static/images/remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_brown-jar2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/brown-jar__translucent_brown-jar.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"translucent brown-jar"</i>
+            </h3>
+          </div>
+          <div class="item item-video10">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_synthetic_object_hotdog2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/hotdog__oil_pastel_hotdog.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"oil pastel hotdog"</i>
+            </h3>
+          </div>
+          <div class="item item-video11">
+            <img src="static/images/add.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition)" />
+            <video poster="" preload="none" id="video_synthetic_object_green-chair2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/green-chair__iron_throne.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"iron throne"</i>
+            </h3>
+          </div>
+          <div class="item item-video12">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_mic2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/etc/mic__mic_amber.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"mic amber"</i>
+            </h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">      
-    <!-- <div class="container" style="width: 70%"> -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-5">vasedeck</h2>
-      </div>
-      <div id="results-real-scene-vasedeck1" class="video-container">
-        <div class="item item-video31" style="margin-right: 0.5vw">
-          <img src="static/images/nothing.png" style="max-width:20%; height:auto;" alt="editing operation (nothing)"/>
-          <video poster="" preload="none" id="video_real_scene_vasedeck0" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/vasedeck.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"flower" </i> (source)
-          </h2>
+
+  <!-- synthetic object -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <!-- <div class="container" style="width: 70%"> -->
+        <div id="results-synthetic-object1" class="video-container">
+          <div class="item item-video13">
+            <img src="static/images/nothing.png" style="max-width:20%; height:auto;"
+              alt="editing operation (nothing)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats1" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"boat"</i> (source)
+            </h3>
+          </div>
+          <div class="item item-video14">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats2" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__cyberpunk_neon_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"cyberpunk neon boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video15">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats3" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__crystal_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"crystal boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video16">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats4" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__jelly_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"jelly boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video17">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats5" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__galaxy_big_bang_explosion_on_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"galaxy big bang <br> explosion on boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video18">
+            <img src="static/images/add_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats6" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__boat_attacked_by_octopus.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"boat attacked by octopus"</i>
+            </h3>
+          </div>
         </div>
-        <div class="item item-video32" style="margin-right: 0.5vw">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_real_scene_vasedeck1" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/flower__swarovski_blue_crystal_flower_trending_on_artstation.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"swarovski blue crystal flower, trending on artstation"</i>
-          </h2>
-        </div>
-        <div class="item item-video33" style="margin-right: 0.5vw">
-          <img src="static/images/change.png" style="max-width:20%; height:auto;" alt="editing operation (color change)" />
-          <video poster="" preload="none" id="video_real_scene_vasedeck2" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/flower__cyberpunk_neon_flower_highly_detailed.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"cyberpunk neon flower, highly detailed"</i>
-          </h2>
-        </div>
-        
-        <div class="item item-video34" style="margin-right: 0.5vw">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_real_scene_vasedeck3" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/flower__burning_flower_a_DSLR_photo.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"burning flower, a DSLR photo"</i>
-          </h2>
-        </div>
-        <div class="item item-video35" style="margin-right: 0.5vw">
-          <img src="static/images/add_change.png" style="max-width:20%; height:auto;" alt="editing operation (color change + density removal)" />
-          <video poster="" preload="none" id="video_real_scene_vasedeck4" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/flower__snow_on_flower.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"snow on flower"</i>
-          </h2>
-        </div>
-        <div class="item item-video36" style="margin-right: 0.5vw">
-          <img src="static/images/remove.png" style="max-width:20%; height:auto;" alt="editing operation (density removal)" />
-          <video poster="" preload="none" id="video_real_scene_vasedeck5" autoplay muted loop height="100%" width="100%" style="border-radius: 10px">
-            <!-- Your video file here -->
-            <source src="static/videos/vasedeck/flower__deck.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered"  style="font-size: 15px">
-            <i>"deck"</i>
-          </h2>
+        <br>
+        <br>
+
+        <div id="results-synthetic-object2" class="video-container">
+          <div class="item item-video19">
+            <img src="static/images/add_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats7" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__firewood_on_fire_trending_on_artstation.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"firewood on fire, trending on artstation"</i>
+            </h3>
+          </div>
+          <div class="item item-video20">
+            <img src="static/images/add_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats8" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__fireworks_on_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"fireworks on boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video21">
+            <img src="static/images/add_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats9" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__boat_inside_blackhole_a_DSLR_photo.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"boat inside blackhole, a DSLR photo"</i>
+            </h3>
+          </div>
+          <div class="item item-video22">
+            <img src="static/images/change_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats10" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__shipwreck.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"shipwreck"</i>
+            </h3>
+          </div>
+          <div class="item item-video23">
+            <img src="static/images/remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats11" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__disappearing_boat.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"disappearing boat"</i>
+            </h3>
+          </div>
+          <div class="item item-video24">
+            <img src="static/images/add_change_remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density addition + density removal)" />
+            <video poster="" preload="none" id="video_synthetic_object_boats12" autoplay muted loop height="90%"
+              width="90%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/boat/boat__ghost_ship.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"ghost ship"</i>
+            </h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- real world scene -->
+  </section>
+  <!-- synthetic object -->
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@InProceedings{song2023blending,
+
+  <!-- real world scene -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Editing on Real-World Scenes</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <!-- <div class="container" style="width: 70%"> -->
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-5">pinecone</h2>
+        </div>
+        <div id="results-real-scene-pinecone1" class="video-container">
+          <div class="item item-video25" style="margin-right: 0.5vw">
+            <img src="static/images/nothing.png" style="max-width:20%; height:auto;"
+              alt="editing operation (nothing)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone0" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"pinecone" </i> (source)
+            </h3>
+          </div>
+          <div class="item item-video26" style="margin-right: 0.5vw">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone1" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone__pineapple_trending_on_artstation.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"pineapple, trending on artstation"</i>
+            </h3>
+          </div>
+          <div class="item item-video27" style="margin-right: 0.5vw">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone2" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone__shining_diamond_pinecone_trending_on_artstation.mp4"
+                type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"shining diamond pinecone, trending on artstation"</i>
+            </h3>
+          </div>
+          <div class="item item-video28" style="margin-right: 0.5vw">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone3" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone__snow_on_pinecone.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"snow on pinecone"</i>
+            </h3>
+          </div>
+          <div class="item item-video29" style="margin-right: 0.5vw">
+            <img src="static/images/add.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density addition)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone4" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone__burning_pinecone.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"burning pinecone"</i>
+            </h3>
+          </div>
+          <div class="item item-video30" style="margin-right: 0.5vw">
+            <img src="static/images/remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density removal)" />
+            <video poster="" preload="none" id="video_real_scene_pinecone5" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/pinecone/pinecone__yard.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"yard "</i>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <!-- <div class="container" style="width: 70%"> -->
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-5">vasedeck</h2>
+        </div>
+        <div id="results-real-scene-vasedeck1" class="video-container">
+          <div class="item item-video31" style="margin-right: 0.5vw">
+            <img src="static/images/nothing.png" style="max-width:20%; height:auto;"
+              alt="editing operation (nothing)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck0" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/vasedeck.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"flower" </i> (source)
+            </h3>
+          </div>
+          <div class="item item-video32" style="margin-right: 0.5vw">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck1" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/flower__swarovski_blue_crystal_flower_trending_on_artstation.mp4"
+                type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"swarovski blue crystal flower, trending on artstation"</i>
+            </h3>
+          </div>
+          <div class="item item-video33" style="margin-right: 0.5vw">
+            <img src="static/images/change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck2" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/flower__cyberpunk_neon_flower_highly_detailed.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"cyberpunk neon flower, highly detailed"</i>
+            </h3>
+          </div>
+
+          <div class="item item-video34" style="margin-right: 0.5vw">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck3" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/flower__burning_flower_a_DSLR_photo.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"burning flower, a DSLR photo"</i>
+            </h3>
+          </div>
+          <div class="item item-video35" style="margin-right: 0.5vw">
+            <img src="static/images/add_change.png" style="max-width:20%; height:auto;"
+              alt="editing operation (color change + density removal)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck4" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/flower__snow_on_flower.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"snow on flower"</i>
+            </h3>
+          </div>
+          <div class="item item-video36" style="margin-right: 0.5vw">
+            <img src="static/images/remove.png" style="max-width:20%; height:auto;"
+              alt="editing operation (density removal)" />
+            <video poster="" preload="none" id="video_real_scene_vasedeck5" autoplay muted loop height="100%"
+              width="100%" style="border-radius: 10px">
+              <!-- Your video file here -->
+              <source src="static/videos/vasedeck/flower__deck.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle has-text-centered" style="font-size: 15px">
+              <i>"deck"</i>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- real world scene -->
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@InProceedings{song2023blending,
   author    = {Song, Hyeonseop and Choi, Seokhun and Do, Hoseok and Lee, Chul and Kim, Taehyeong},
   title     = {Blending-NeRF: Text-Driven Localized Editing in Neural Radiance Fields},
   booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
@@ -727,23 +774,24 @@
   pages     = {14383-14393}
 }
     </code></pre>
-  </div>
-</section>
+    </div>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            We borrowed a website template from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>. 
-            Thanks for the excellent website template.
-          </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              We borrowed a website template from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+              Thanks for the excellent website template.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5HMY6QM6S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-J5HMY6QM6S');
+  </script> -->
+
+  <meta name="description"
+    content="Project page of Click-Gaussian: Interactive Segmentation to Any 3D Gaussians">
+  <meta name="keywords" content="Click-Gaussian, 3D Gaussian Splatting, Gaussian Segmentation, Interactive Segmentation, 3D Feature Field, Contrastive Learning, View-consistency">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Click-Gaussian: Interactive Segmentation to Any 3D Gaussians</title>
+
+  <meta property="og:title" content="Click-Gaussian: Interactive Segmentation to Any 3D Gaussians" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seokhunchoi.github.io/Click-Gaussian/" />
+  <meta property="og:site_name" content="Click-Gaussian" />
+  <meta property="og:image" content="https://seokhunchoi.github.io/Click-Gaussian/static/images/overview.png" />
+  <meta property="og:description"
+    content="We present Click-Gaussian, a swift and precise method for interactive segmentation of 3D Gaussians using two-level granularity feature fields derived from 2D segmentation masks.">
+  <link rel="canonical" href="https://seokhunchoi.github.io/Click-Gaussian/" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <style>
+    .video-container {
+      display: flex;
+    }
+
+    .video {
+      width: 50%;
+      /* Adjust the width as per your needs */
+    }
+    
+  </style>
+  
+  <script
+  defer
+  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+
+  
+  <link rel="stylesheet" href="./static/css/dics.min.css">
+  <script src="./static/js/dics.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', domReady);
+    function domReady() {
+        for (const e of document.querySelectorAll(".b-dics")) {
+            new Dics({
+                container: e,
+                textPosition: "top"
+            });
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              👆Click-Gaussian: Interactive Segmentation to Any 3D Gaussians</h1>
+            <div class="title is-size-3" style="color:#6c767e;">ECCV 2024</div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Seokhun Choi<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Hyeonseop Song<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Jaechul Kim<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Taehyeong Kim<sup>2†</sup>,
+              </span>
+              <span class="author-block">
+                Hoseok Do<sup>1†</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>LG Electronics,
+              </span>
+              <span class="author-block">
+                <sup>2</sup>Seoul National University,
+              </span>
+              <span class="author-block">
+                <sup>*</sup>Equal contribution,
+              </span>
+              <span class="author-block">
+                <sup>†</sup>Co-corresponding author
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <!-- <a href="https://arxiv.org/pdf/2308.11974" -->
+                  <a href="https://seokhunchoi.github.io/Click-Gaussian/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://seokhunchoi.github.io/Click-Gaussian/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=vmz9HUlTR7E"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <center>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay autobuffer muted loop controls playsinline width="100%">
+          <source src="static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h3 class="subtitle has-text-centered">
+          We present 👆Click-Gaussian, a swift and precise method for interactive segmentation of 3D Gaussians using two-level granularity feature fields derived from 2D segmentation masks.
+        </h3>
+      </div>
+    </div>
+  </section>
+  </center>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Interactive segmentation of 3D Gaussians opens a great opportunity for real-time manipulation of 3D scenes thanks to the real-time rendering capability of 3D Gaussian Splatting. 
+              However, the current methods suffer from time-consuming post-processing to deal with noisy segmentation output. 
+              Also, they struggle to provide detailed segmentation, which is important for fine-grained manipulation of 3D scenes. 
+              In this study, we propose Click-Gaussian, which learns distinguishable feature fields of two-level granularity, facilitating segmentation without time-consuming post-processing.
+              We delve into challenges stemming from inconsistently learned feature fields resulting from 2D segmentation obtained independently from a 3D scene.
+              3D segmentation accuracy deteriorates when 2D segmentation results across the views, primary cues for 3D segmentation, are in conflict. 
+              To overcome these issues, we propose Global Feature-guided Learning (GFL).
+              GFL constructs the clusters of global feature candidates from noisy 2D segments across the views, which smooths out noises when training the features of 3D Gaussians. 
+              Our method runs in 10~ms per click, 15 to 130 times as fast as the previous methods, while also significantly improving segmentation accuracy.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/vmz9HUlTR7E?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen
+              title="Demo video for Click-Gaussian, ECCV 2024"></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered"><p>Video</p></h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/vmz9HUlTR7E?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">
+          <p>Method Overview</p>
+        </h2>
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/overview.png" alt="Click-Gaussian architecture." />
+        </div>
+        <p>
+          Overview of the proposed method.
+          i) Our approach augments pre-trained 3D Gaussians with two-level granularity features $\mathbf{f}_i$. 
+          ii) These features are trained through contrastive learning, utilizing 2D rendered feature maps $\mathbf{F}$ and their corresponding SAM-generated masks $M$.
+          iii) To address inconsistencies in mask signals across views, we introduce a Global Feature-guided Learning approach.
+          For clarity, Global Feature-guided Learning at the fine-level is omitted from the illustration.
+          For more details, please refer to our <a href="https://seokhunchoi.github.io/Click-Gaussian/"> paper</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">
+          <p>Demo</p>
+        </h2>
+        <video id="teaser" autoplay autobuffer muted loop controls playsinline width="100%">
+          <source src="static/videos/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+
+        <h2 class="title is-3 has-text-centered">
+          <p>Comparison</p>
+        </h2>
+
+        <!--  -->
+
+        <h3 class="title is-4 has-text-centered">
+          <p>Comparison on LERF-Mask Dataset</p>
+        </h3>
+
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/comparison_lerf_mask_dataset.png" alt="Click-Gaussian architecture." />
+        </div>
+        <p>
+          The results are displayed in three lines per scene (Teatime, Ramen, and Figurines in order). 
+          Each scene's first two rows show coarse and fine level segmentation results, respectively, and the third row shows the PCA visualizations of each model's finest-level feature field. 
+          Our approach demonstrates superior segmentation ability in both coarse and fine levels. 
+          Red and yellow boxes indicate noisy and under-segmentation results, respectively. 
+        </p>
+        
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/comparison_lerf_mask_dataset_teatime.png" alt="Click-Gaussian architecture." />
+        </div>
+        <p>
+          Our approach performs more detailed and cleaner extractions of Gaussians, up to 130 times faster than other baselines.
+        </p>
+        
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/comparison_segment_everything.png" alt="Click-Gaussian architecture." />
+        </div>
+        <p>
+          Our method shows more exact and fine-grained results against baselines in performing automatic segmentation of everything on novel views.
+        </p>
+        
+        <!--  -->
+        
+        <h3 class="title is-4 has-text-centered">
+          <p>Comparison on SPIn-NeRF Dataset</p>
+        </h3>
+        
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/images/comparison_spinnerf_dataset.png" alt="Click-Gaussian architecture." />
+        </div>
+        <p>
+          Our method achieves more precise Gaussian extraction, highlighted by red dotted lines, and runs about 15 times faster than SAGA.
+        </p>
+        
+         <!-- -->
+        
+        <h2 class="title is-3 has-text-centered">
+          <p>Application</p>
+        </h2>
+
+        <div id="results-carousel" class="carousel results-carousel">
+          
+            <div class="item">
+              <video poster="" id="sora_snow_village" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sora_snow_village_horizontal.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="item">
+              <video poster="" id="sora_santorini" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sora_santorini_horizontal.mp4"
+                        type="video/mp4">
+              </video>
+            </div>  
+        </div>
+
+        <p>          
+          OpenAI recently announced Sora, a groundbreaking text-to-video generation model. 
+          To demonstrate Click-Gaussian's versatility in scene segmentation and manipulation tasks, we applied our method to some Sora-generated videos (<a href="https://cdn.openai.com/sora/videos/santorini.mp4">santorini</a> and <a href="https://cdn.openai.com/tmp/s/interp/b2.mp4">snow-village</a>). 
+          After pre-training 3DGS on each generated video, with Click-Gaussian, users can flexibly make desired modifications such as resizing, translation, and text-based editing.        
+        </p>
+
+         <!-- -->
+        
+        <h2 class="title is-3 has-text-centered">
+          <p>More Results</p>
+        </h2>
+
+        <div id="results-carousel" class="carousel results-carousel">
+          
+          <div class="item2">
+            <div class="b-dics" style="width: 100%">
+              <img src="./static/videos/ori_fig.gif" alt="Scene" />
+              <img src="./static/videos/pca_coarse_fig.gif" alt="Feature field (coarse)" />
+              <img src="./static/videos/pca_fine_fig.gif" alt="Feature field (fine)" />
+            </div>
+          </div>
+          
+          <div class="item2">
+            <div class="b-dics" style="width: 100%">
+              <img src="./static/videos/ori_teatime.gif" alt="Scene" />
+              <img src="./static/videos/pca_coarse_teatime.gif" alt="Feature field (coarse)" />
+              <img src="./static/videos/pca_fine_teatime.gif" alt="Feature field (fine)" />
+            </div>
+          </div>
+          
+          <div class="item2">
+            <div class="b-dics" style="width: 100%">
+              <img src="./static/videos/ori_ramen.gif" alt="Scene" />
+              <img src="./static/videos/pca_coarse_ramen.gif" alt="Feature field (coarse)" />
+              <img src="./static/videos/pca_fine_ramen.gif" alt="Feature field (fine)" />
+            </div>
+          </div>
+        </div>
+        <p>
+          We show our PCA-visualized coarse and fine level feature fields in three scenes (Figurines, Teatime and Ramen) from LERF-Mask Dataset.
+        </p>
+
+        
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_1_bouquet.png" alt="Segment everything on bouquet scene." />
+            </div>
+          </div>
+  
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_2_dozer_nerfgun_waldo.png" alt="Segment everything on dozer-nerfgun-waldo scene." />  
+            </div>
+          </div>
+  
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_3_espresso.png" alt="Segment everything on espresso scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_4_figurines.png" alt="Segment everything on figurines scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_5_fruit_aisle.png" alt="Segment everything on fruit-aisle scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_6_ramen.png" alt="Segment everything on ramen scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_7_shoe_rack.png" alt="Segment everything on shoe-rack scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_8_teatime.png" alt="Segment everything on teatime scene." />  
+            </div>
+          </div>
+          
+          <div>
+            <div class="item">
+              <img style="width: 100%;" src="static/images/segment_everything_9_donuts.png" alt="Segment everything on donuts scene." />  
+            </div>
+          </div>
+  
+        </div>
+        <p>
+          We present automatic segmentation results (third and fifth columns) along with PCA visualizations of rendered feature maps (second and fourth columns) at two granularity levels for various nine scenes (first column) from the LeRF Dataset.
+          Objects classified with the same ID in the segmentation results share the same overlaid color across the three given views, as each global cluster ID remains consistent throughout a scene.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+<!-- 
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@InProceedings{song2023blending,
+  author    = {Song, Hyeonseop and Choi, Seokhun and Do, Hoseok and Lee, Chul and Kim, Taehyeong},
+  title     = {Click-Gaussian: Interactive Segmentation to Any 3D Gaussians},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2023},
+  pages     = {14383-14393}
+}
+    </code></pre>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              We borrowed a website template from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+              Thanks for the excellent website template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

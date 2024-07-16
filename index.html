@@ -15,7 +15,7 @@
   </script>
   <meta name="naver-site-verification" content="ed998fc649d674bed2623c0eb7df043f8b37705c" />
 
-  <title>Seokhun Choi</title>    
+  <title>Seokhun Choi, a research scientist at LG Electronics</title>    
   <meta name="author" content="Seokhun Choi">
   <meta name="description" content="Hello, I'm Seokhun Choi, a research scientist at LG Electronics, currently working as a member of the Generative AI team.">
   <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -49,7 +49,7 @@
               </p>
               <p>
                 My research interests lie in the fields of computer vision and generative AI. 
-                I'm particularly interested in 2D/3D content generation and manipulation using diffusion models, Neural Radiance Fields (NeRF), and other related methods.
+                I'm particularly interested in 2D/3D content generation and manipulation using diffusion models, Neural Radiance Fields (NeRF), 3D Gaussian Splatting (3DGS), and other related methods.
               </p></h2>
               <p style="text-align:center">
                 <a href="mailto:seokhun.choi@lge.com">Email</a> &nbsp/&nbsp
@@ -64,6 +64,55 @@
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
 <!-- Works listed here -->      
+
+<!-- Click-Gaussian -->
+<tr onmouseout="Click_Gaussian_stop()" onmouseover="Click_Gaussian_start()">
+  <td style="padding:20px;width:25%;vertical-align:middle">
+      <!-- IMAGES -->
+      <div class="one">
+        <div class="two" id="Click_Gaussian_under" style="opacity: 0; margin-top:40px">
+          <img src="Click-Gaussian/static/images/overview.png" width="180"
+          alt="Overview of blending nerf">
+        </div>
+        <video width="115%" height="100%" muted="" autoplay="" loop="" id="Click_Gaussian_video" style="opacity: 1;">
+          <source src="Click-Gaussian/static/videos/teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <!-- SCRIPT FOR HOVERING -->
+      <script type="text/javascript">
+        function Click_Gaussian_start() {
+          document.getElementById('Click_Gaussian_video').style.opacity = "0";
+          document.getElementById('Click_Gaussian_under').style.opacity = "1";
+        }
+  
+        function Click_Gaussian_stop() {
+          document.getElementById('Click_Gaussian_video').style.opacity = "1";
+          document.getElementById('Click_Gaussian_under').style.opacity = "0";
+        }
+        Click_Gaussian_stop()
+      </script>
+    </td>
+<td style="padding:20px;width:75%;vertical-align:middle">
+  <!-- TITLE -->
+  <a href="https://seokhunchoi.github.io/Click-Gaussian"><papertitle>Click-Gaussian: Interactive Segmentation to Any 3D Gaussians</papertitle></a>
+  <br>
+  <!-- AUTHORS -->
+  <b>Seokhun Choi*</b>, Hyeonseop Song*, Jaechul Kim, Taehyeong Kim, Hoseok Do
+  <br>
+  *Equal contribution
+  <!-- <br> -->
+  <!-- CONFERENCE -->
+  <br>
+  <em>ECCV</em> 2024 - <a href="https://seokhunchoi.github.io/Click-Gaussian">Project</a>
+  <!-- <em>ECCV</em> 2024 - <a href="https://arxiv.org/abs/2308.11974">arXiv</a> / <a href="https://seokhunchoi.github.io/Click-Gaussian">Project</a> / <a href="https://www.youtube.com/watch?v=vmz9HUlTR7E">Video</a> / <a href="https://seokhunchoi.github.io/Click-Gaussian/static/pdf/BlendingNeRF_ICCV2023.pdf">Paper</a> / <a href="pdf/BlendingNeRF_poster.pdf">Poster</a> -->
+  <p></p>
+  <!-- SUMMARY -->
+  We present Click-Gaussian, a swift and precise method for interactive segmentation of 3D Gaussians using two-level granularity feature fields derived from 2D segmentation masks.
+</td>
+</tr>
+
+
 <!-- Blending-NeRF -->
 <tr onmouseout="Blending_NeRF_stop()" onmouseover="Blending_NeRF_start()">
     <td style="padding:20px;width:25%;vertical-align:middle">

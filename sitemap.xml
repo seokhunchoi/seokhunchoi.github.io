@@ -12,6 +12,10 @@
 <url>
   <loc>https://seokhunchoi.github.io/</loc>
   <priority>0.80</priority>
+  
+  <image:image>
+    <image:loc>https://seokhunchoi.github.io/Click-Gaussian/static/images/overview.png</image:loc>
+  </image:image>
 
   <image:image>
     <image:loc>https://seokhunchoi.github.io/Blending-NeRF/static/images/overview.png</image:loc>
@@ -20,6 +24,12 @@
   <image:image>
     <image:loc>https://seokhunchoi.github.io/images/vso_torque.png</image:loc>
   </image:image>
+</url>
+
+<url>
+  <loc>https://seokhunchoi.github.io/Click-Gaussian/</loc>
+  <lastmod>2024-07-17T01:31:01+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 
 <url>

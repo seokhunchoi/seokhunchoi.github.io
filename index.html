@@ -45,7 +45,7 @@
               </p></h1>
               <h2><p>
                 I'm a research scientist at LG Electronics, currently working as a member of the Generative AI team. 
-                I received B.S. and M.S degrees in automotive engineering at Hanyang University in 2020 and 2022, respectively.          
+                I received B.S. and M.S. degrees in automotive engineering at Hanyang University in 2020 and 2022, respectively.          
               </p>
               <p>
                 My research interests lie in the fields of computer vision and generative AI. 
@@ -70,11 +70,11 @@
   <td style="padding:20px;width:25%;vertical-align:middle">
       <!-- IMAGES -->
       <div class="one">
-        <div class="two" id="Click_Gaussian_under" style="opacity: 0; margin-top:40px">
+        <div class="two" id="Click_Gaussian_under" style="opacity: 1; margin-top:40px">
           <img src="Click-Gaussian/static/images/overview.png" width="180"
           alt="Overview of blending nerf">
         </div>
-        <video width="115%" height="100%" muted="" autoplay="" loop="" id="Click_Gaussian_video" style="opacity: 1;">
+        <video width="115%" height="100%" muted="" autoplay="" loop="" id="Click_Gaussian_video" style="opacity: 0;">
           <source src="Click-Gaussian/static/videos/teaser.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -82,13 +82,13 @@
       <!-- SCRIPT FOR HOVERING -->
       <script type="text/javascript">
         function Click_Gaussian_start() {
-          document.getElementById('Click_Gaussian_video').style.opacity = "0";
-          document.getElementById('Click_Gaussian_under').style.opacity = "1";
+          document.getElementById('Click_Gaussian_video').style.opacity = "1";
+          document.getElementById('Click_Gaussian_under').style.opacity = "0";
         }
   
         function Click_Gaussian_stop() {
-          document.getElementById('Click_Gaussian_video').style.opacity = "1";
-          document.getElementById('Click_Gaussian_under').style.opacity = "0";
+          document.getElementById('Click_Gaussian_video').style.opacity = "0";
+          document.getElementById('Click_Gaussian_under').style.opacity = "1";
         }
         Click_Gaussian_stop()
       </script>
@@ -118,11 +118,11 @@
     <td style="padding:20px;width:25%;vertical-align:middle">
         <!-- IMAGES -->
         <div class="one">
-          <div class="two" id="Blending_NeRF_under" style="opacity: 0; margin-top:50px">
+          <div class="two" id="Blending_NeRF_under" style="opacity: 1; margin-top:50px">
             <img src="Blending-NeRF/static/images/overview.png" width="180"
             alt="Overview of blending nerf">
           </div>
-          <video width="115%" height="100%" muted="" autoplay="" loop="" id="Blending_NeRF_video" style="opacity: 1;">
+          <video width="115%" height="100%" muted="" autoplay="" loop="" id="Blending_NeRF_video" style="opacity: 0;">
             <source src="Blending-NeRF/static/videos/teaser.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -130,13 +130,13 @@
         <!-- SCRIPT FOR HOVERING -->
         <script type="text/javascript">
           function Blending_NeRF_start() {
-            document.getElementById('Blending_NeRF_video').style.opacity = "0";
-            document.getElementById('Blending_NeRF_under').style.opacity = "1";
+            document.getElementById('Blending_NeRF_video').style.opacity = "1";
+            document.getElementById('Blending_NeRF_under').style.opacity = "0";
           }
     
           function Blending_NeRF_stop() {
-            document.getElementById('Blending_NeRF_video').style.opacity = "1";
-            document.getElementById('Blending_NeRF_under').style.opacity = "0";
+            document.getElementById('Blending_NeRF_video').style.opacity = "0";
+            document.getElementById('Blending_NeRF_under').style.opacity = "1";
           }
           Blending_NeRF_stop()
         </script>

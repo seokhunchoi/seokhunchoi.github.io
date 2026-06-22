@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <!-- Introduction -->
@@ -65,13 +65,59 @@
 				
 <!-- Works listed here -->      
 
+<!-- PoseSyn -->
+<tr onmouseout="PoseSyn_stop()" onmouseover="PoseSyn_start()">
+  <td style="padding:20px;width:25%;vertical-align:middle">
+      <!-- IMAGES -->
+      <div class="one">
+        <div class="two" id="PoseSyn_under" style="opacity: 1; margin-top:-4px; text-align:center">
+          <img src="images/PoseSyn_teaser.png" width="185"
+          alt="Overview of PoseSyn">
+        </div>
+        <div class="two" id="PoseSyn_hover" style="opacity: 0; margin-top:67px; text-align:center">
+          <img src="images/PoseSyn_overview.png" width="185"
+          alt="Overview of PoseSyn">
+        </div>
+      </div>
+      <!-- SCRIPT FOR HOVERING -->
+      <script type="text/javascript">
+        function PoseSyn_start() {
+          document.getElementById('PoseSyn_hover').style.opacity = "1";
+          document.getElementById('PoseSyn_under').style.opacity = "0";
+        }
+
+        function PoseSyn_stop() {
+          document.getElementById('PoseSyn_hover').style.opacity = "0";
+          document.getElementById('PoseSyn_under').style.opacity = "1";
+        }
+        PoseSyn_stop()
+      </script>
+    </td>
+<td style="padding:20px;width:75%;vertical-align:middle">
+  <!-- TITLE -->
+  <a href="https://arxiv.org/abs/2503.13025"><papertitle>PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data</papertitle></a>
+  <br>
+  <!-- AUTHORS -->
+  ChangHee Yang*, Hyeonseop Song*, <b>Seokhun Choi*</b>, Seungwoo Lee, Jaechul Kim, Hoseok Do
+  <br>
+  *Equal contribution
+  <!-- CONFERENCE -->
+  <br>
+  <em>ICCV</em> 2025 - <a href="https://arxiv.org/abs/2503.13025">arXiv</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Yang_PoseSyn_Synthesizing_Diverse_3D_Pose_Data_from_In-the-Wild_2D_Data_ICCV_2025_paper.pdf">Paper</a>
+  <p></p>
+  <!-- SUMMARY -->
+  We present PoseSyn, a novel data synthesis framework that transforms abundant in-the-wild 2D pose datasets into diverse 3D pose image pairs, boosting the accuracy of various 3D pose estimators by up to 14% across real-world benchmarks.
+</td>
+</tr>
+
+
 <!-- Click-Gaussian -->
 <tr onmouseout="Click_Gaussian_stop()" onmouseover="Click_Gaussian_start()">
   <td style="padding:20px;width:25%;vertical-align:middle">
       <!-- IMAGES -->
       <div class="one">
-        <div class="two" id="Click_Gaussian_under" style="opacity: 1; margin-top:40px">
-          <img src="Click-Gaussian/static/images/overview.png" width="180"
+        <div class="two" id="Click_Gaussian_under" style="opacity: 1; margin-top:55px">
+          <img src="Click-Gaussian/static/images/overview.png" width="200"
           alt="Overview of blending nerf">
         </div>
         <video width="115%" height="100%" muted="" autoplay="" loop="" id="Click_Gaussian_video" style="opacity: 0;">
@@ -118,8 +164,8 @@
     <td style="padding:20px;width:25%;vertical-align:middle">
         <!-- IMAGES -->
         <div class="one">
-          <div class="two" id="Blending_NeRF_under" style="opacity: 1; margin-top:50px">
-            <img src="Blending-NeRF/static/images/overview.png" width="180"
+          <div class="two" id="Blending_NeRF_under" style="opacity: 1; margin-top:72px">
+            <img src="Blending-NeRF/static/images/overview.png" width="200"
             alt="Overview of blending nerf">
           </div>
           <video width="115%" height="100%" muted="" autoplay="" loop="" id="Blending_NeRF_video" style="opacity: 0;">
@@ -163,7 +209,7 @@
 <!-- vso-torque-prediction -->
 <tr onmouseout="vso_torque_stop()" onmouseover="vso_torque_start()">    
     <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/vso_torque.png" alt="Overview of vehicle speed optimization based on predicted traction torque." width="160" style="margin-left:10px">
+        <img src="images/vso_torque.png" alt="Overview of vehicle speed optimization based on predicted traction torque." width="195" style="margin-left:10px">
     </td>
 
     <td style="padding:20px;width:75%;vertical-align:middle">

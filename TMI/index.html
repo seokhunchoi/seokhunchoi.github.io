@@ -558,9 +558,13 @@
             </tbody>
           </table>
         </div>
-        <p class="caption">Among methods generating data exclusively for rare categories, DiverGen shows <i>decreased</i>
-          rare-class performance due to reduced realism (AP<sub>r</sub><sup>box</sup> 41.4 &rarr; 34.5), whereas our I2I
-          approach (VRAIN) effectively improves rare-class performance with high visual fidelity and accurate labels.</p>
+        <p class="caption">Among methods generating data <i>exclusively</i> for rare categories, an ironic situation
+          arises: DiverGen, despite explicitly targeting rare classes, <i>catastrophically underperforms</i> even the
+          Real-only baseline on rare categories (AP<sub>r</sub><sup>box</sup> 41.4 &rarr; 34.5). This contradictory
+          result highlights that naive copy-pasting harms performance due to its poor contextual coherence and realism,
+          encouraging the model to overfit to pasted instances rather than learning true representations. In contrast,
+          our rare-class-focused I2I approach (VRAIN) successfully boosts rare-class performance
+          (41.4 &rarr; 42.9), benefiting from high visual fidelity and precise instance-level labeling.</p>
       </div>
     </div>
   </section>

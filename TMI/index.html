@@ -474,6 +474,29 @@
         <i>headset</i> ($c^*$), creating a semantic mismatch, and is thus filtered out; (b) the target <i>headset</i> is
         correctly added, passing the verification.
       </p>
+
+      <div class="reveal">
+        <h3 class="subhead">Ablation on VLM Verification in VRAIN (Swin-L)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th><th>AP<sup>box</sup></th><th>AP<sup>mask</sup></th>
+                <th>AP<sub>r</sub><sup>box</sup></th><th>AP<sub>r</sub><sup>mask</sup></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowname">Real-only</td><td>47.5</td><td>42.3</td><td>41.4</td><td>36.8</td></tr>
+              <tr><td class="rowname">D<sub>I2I</sub> only (w/o verification)</td><td>47.4</td><td>42.5</td><td>39.5</td><td>36.0</td></tr>
+              <tr class="ours"><td>D<sub>I2I</sub> only (VRAIN)</td><td>48.1</td><td>43.3</td><td>42.9</td><td>39.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">We compare I2I data with and without VLM-based filtering. Removing the verification step
+          <i>degrades</i> both overall and rare-class AP &mdash; even falling below the Real-only baseline on rare
+          classes (AP<sub>r</sub><sup>box</sup> 41.4 &rarr; 39.5) &mdash; whereas VRAIN's verified data improves it
+          (&rarr; 42.9). This confirms the VLM filter is crucial for retaining semantically correct, relevant instances.</p>
+      </div>
     </div>
   </section>
 
@@ -567,6 +590,29 @@
         pseudo-labels (blue) to form the final supervision. As the teacher adapts to the T2I domain, it successfully
         labels rare classes such as <i>dove</i> and <i>walrus</i>.
       </p>
+
+      <div class="reveal">
+        <h3 class="subhead">Ablation on T2I Pseudo-label Supervision (Swin-L)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th><th>AP<sup>box</sup></th><th>AP<sup>mask</sup></th>
+                <th>AP<sub>r</sub><sup>box</sup></th><th>AP<sub>r</sub><sup>mask</sup></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowname">Real-only</td><td>47.5</td><td>42.3</td><td>41.4</td><td>36.8</td></tr>
+              <tr><td class="rowname">$M_\text{teacher}$ only</td><td>49.4</td><td>43.9</td><td>47.9</td><td>43.0</td></tr>
+              <tr><td class="rowname">$M_\mathcal{P}$ only</td><td>49.9</td><td>44.9</td><td>45.3</td><td>41.7</td></tr>
+              <tr class="ours"><td>$M_\text{teacher}$ and $M_\mathcal{P}$</td><td>50.3</td><td>45.1</td><td>47.5</td><td>43.8</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">We evaluate the impact of different pseudo-label sources. The offline labeler
+          $M_\mathcal{P}$ provides stable supervision for common categories, the EMA teacher $M_\text{teacher}$
+          adaptively improves rare-class coverage, and combining both leverages their complementary strengths.</p>
+      </div>
     </div>
   </section>
 

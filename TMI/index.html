@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+    content="Project page of TMI: Text-to-Image Meets Image-to-Image for Complementary Data Synthesis to Boost Long-Tailed Instance Segmentation">
+  <meta name="keywords"
+    content="TMI, Data Synthesis, Long-Tailed Instance Segmentation, LVIS, Text-to-Image, Image-to-Image, VRAIN, Diffusion Models, Teacher-Student">
+  <title>TMI &middot; Text-to-Image Meets Image-to-Image</title>
+
+  <meta property="og:title" content="TMI: Text-to-Image Meets Image-to-Image for Complementary Data Synthesis" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seokhunchoi.github.io/TMI/" />
+  <meta property="og:site_name" content="TMI" />
+  <meta property="og:image" content="https://seokhunchoi.github.io/TMI/static/images/figure_1_teaser.png" />
+  <meta property="og:description"
+    content="A hybrid data synthesis framework coupling text-to-image generation with context-aware image-to-image editing (VRAIN) to boost long-tailed instance segmentation on LVIS." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪄</text></svg>">
+
+  <script>
+    MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <style>
+    :root {
+      --bg: #06080f;
+      --bg-2: #0a0e1a;
+      --surface: rgba(255, 255, 255, 0.035);
+      --surface-2: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --text: #e8ebf2;
+      --muted: #99a2b3;
+      --faint: #6b7385;
+      --indigo: #6366f1;
+      --violet: #8b5cf6;
+      --cyan: #22d3ee;
+      --pink: #ec4899;
+      --grad: linear-gradient(120deg, #6366f1 0%, #8b5cf6 45%, #ec4899 100%);
+      --grad-soft: linear-gradient(120deg, rgba(99, 102, 241, .18), rgba(236, 72, 153, .18));
+      --radius: 18px;
+      --shadow: 0 24px 60px -20px rgba(0, 0, 0, .65);
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ambient background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(60rem 60rem at 75% -10%, rgba(99, 102, 241, .20), transparent 60%),
+        radial-gradient(50rem 50rem at 5% 10%, rgba(236, 72, 153, .14), transparent 55%),
+        radial-gradient(45rem 45rem at 90% 80%, rgba(34, 211, 238, .12), transparent 55%),
+        var(--bg);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 .5H40M.5 0V40' stroke='rgba(255,255,255,0.022)' fill='none'/%3E%3C/svg%3E");
+      mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- scroll progress ---------- */
+    #progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--grad); z-index: 200; transition: width .1s linear;
+      box-shadow: 0 0 14px rgba(139, 92, 246, .7);
+    }
+
+    /* ---------- nav ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      background: rgba(8, 10, 18, .55);
+      border-bottom: 1px solid transparent;
+      transition: background .3s, border-color .3s;
+    }
+    nav.scrolled { background: rgba(8, 10, 18, .82); border-bottom-color: var(--border); }
+    .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 24px; }
+    .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: .3px; display: flex; align-items: center; gap: 8px; }
+    .brand .dot { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { margin-left: auto; display: flex; gap: 6px; }
+    .nav-links a {
+      font-size: .9rem; color: var(--muted); padding: 7px 14px; border-radius: 999px;
+      transition: color .2s, background .2s; font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+    .nav-links a.active { color: #fff; background: var(--grad-soft); }
+    .nav-toggle { display: none; margin-left: auto; background: none; border: 0; color: var(--text); cursor: pointer; }
+
+    /* ---------- hero ---------- */
+    header {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 0 80px; overflow: hidden;
+    }
+    .orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; z-index: -1; animation: float 16s ease-in-out infinite; }
+    .orb.a { width: 420px; height: 420px; background: #6366f1; top: -80px; right: -60px; }
+    .orb.b { width: 360px; height: 360px; background: #ec4899; bottom: -100px; left: -80px; animation-delay: -5s; }
+    .orb.c { width: 300px; height: 300px; background: #22d3ee; top: 40%; left: 55%; animation-delay: -9s; opacity: .35; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(20px, -30px) scale(1.08); } }
+
+    .badge-venue {
+      display: inline-flex; align-items: center; gap: 9px; padding: 7px 16px; border-radius: 999px;
+      border: 1px solid var(--border-strong); background: var(--surface);
+      font-size: .82rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text);
+    }
+    .badge-venue .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 0 rgba(34, 211, 238, .6); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, .6); } 70% { box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); } }
+
+    h1.title {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -1px;
+      margin: 26px 0 10px; max-width: none;
+    }
+    h1.title .accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle-lead { font-size: clamp(1rem, 2vw, 1.22rem); color: var(--muted); max-width: 78ch; margin-bottom: 30px; text-align: justify; text-justify: inter-word; }
+
+    .authors { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 1.18rem; margin-bottom: 8px; }
+    .authors .au { font-weight: 600; }
+    .authors .au sup { color: var(--violet); }
+    .affil { color: var(--muted); font-size: .95rem; margin-bottom: 4px; }
+    .note { color: var(--muted); font-size: .9rem; font-weight: 500; margin-bottom: 30px; letter-spacing: .01em; }
+    .note sup { color: var(--violet); font-weight: 700; }
+    .note .sep { color: var(--faint); margin: 0 8px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; border-radius: 999px;
+      font-weight: 600; font-size: .95rem; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s;
+      border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+    }
+    .btn svg { width: 18px; height: 18px; }
+    .btn:hover { transform: translateY(-2px); background: var(--surface-2); }
+    .btn.primary { background: var(--grad); border-color: transparent; box-shadow: 0 12px 30px -10px rgba(124, 58, 237, .7); }
+    .btn.primary:hover { box-shadow: 0 16px 38px -8px rgba(124, 58, 237, .85); }
+
+    .scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--faint); font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .scroll-cue .mouse { width: 22px; height: 36px; border: 2px solid var(--border-strong); border-radius: 12px; position: relative; }
+    .scroll-cue .mouse::after { content: ""; position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 4px; height: 7px; border-radius: 2px; background: var(--muted); animation: wheel 1.6s infinite; }
+    @keyframes wheel { 0% { opacity: 1; top: 7px; } 100% { opacity: 0; top: 17px; } }
+
+    /* ---------- sections ---------- */
+    section.block { padding: 84px 0; position: relative; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--violet); margin-bottom: 14px;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--grad); border-radius: 2px; }
+    h2.heading { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.7rem, 3.4vw, 2.5rem); letter-spacing: -.5px; line-height: 1.15; }
+    h3.subhead { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.25rem; margin: 8px 0 18px; color: var(--text); }
+    .lead-text { color: var(--muted); font-size: 1.05rem; }
+    .section-head { margin-bottom: 36px; }
+    .section-head.center { text-align: center; }
+    .section-head.center .eyebrow { justify-content: center; }
+    .section-head.center .lead-text { margin: 0 auto; }
+
+    /* glass figure */
+    .figure {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 14px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .figure::before { content: ""; position: absolute; inset: 0; padding: 1px; border-radius: inherit; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: .35; pointer-events: none; }
+    .figure img { width: 100%; border-radius: 12px; background: #fff; padding: 10px; }
+    .caption { color: var(--muted); font-size: .92rem; margin-top: 16px; text-align: justify; text-justify: inter-word; }
+    .caption.center { margin-left: auto; margin-right: auto; text-align: center; max-width: 100ch; }
+
+    .stack > * + * { margin-top: 26px; }
+
+    /* abstract */
+    .abstract-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 40px clamp(24px, 4vw, 52px); position: relative; box-shadow: var(--shadow);
+    }
+    .abstract-card .quote-mark { font-family: 'Space Grotesk', sans-serif; font-size: 5rem; line-height: 0; color: var(--violet); opacity: .25; position: absolute; top: 38px; left: 22px; }
+    .abstract-card p { font-size: 1.08rem; color: #cdd3df; text-align: justify; text-justify: inter-word; }
+    .abstract-card b { color: #fff; }
+
+    /* metrics */
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .metric {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px 26px; text-align: center; position: relative; overflow: hidden; transition: transform .25s, border-color .25s;
+    }
+    .metric:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+    .metric .big { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 3rem; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .metric .lbl { color: var(--muted); font-size: .95rem; margin-top: 10px; }
+    .metric .sub { color: var(--faint); font-size: .8rem; margin-top: 4px; }
+
+    /* tables */
+    .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 560px; }
+    thead th {
+      background: rgba(255, 255, 255, .04); color: var(--text); font-weight: 600; text-align: center;
+      padding: 14px 12px; border-bottom: 1px solid var(--border-strong); white-space: nowrap;
+    }
+    tbody td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover td { background: rgba(255, 255, 255, .025); }
+    tbody tr.ours td { background: var(--grad-soft); color: var(--text); font-weight: 600; }
+    tbody tr.ours:hover td { background: var(--grad-soft); }
+    td.rowname { color: var(--text); font-weight: 600; }
+    .check { color: var(--cyan); }
+
+    /* carousel */
+    .carousel { position: relative; border-radius: var(--radius); }
+    .carousel-viewport { overflow: hidden; border-radius: var(--radius); }
+    .carousel-track { display: flex; transition: transform .5s cubic-bezier(.65, .05, .36, 1); }
+    .carousel-track .slide { min-width: 100%; padding: 14px; }
+    .carousel-track .slide img { width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #fff; padding: 10px; }
+    .car-btn {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+      width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border-strong);
+      background: rgba(10, 14, 26, .7); backdrop-filter: blur(8px); color: var(--text);
+      display: grid; place-items: center; cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .car-btn:hover { background: var(--grad); transform: translateY(-50%) scale(1.06); }
+    .car-btn.prev { left: 12px; } .car-btn.next { right: 12px; }
+    .car-btn svg { width: 20px; height: 20px; }
+    .dots { display: flex; justify-content: center; gap: 9px; margin-top: 20px; }
+    .dots button { width: 9px; height: 9px; border-radius: 50%; border: 0; background: var(--border-strong); cursor: pointer; transition: all .25s; padding: 0; }
+    .dots button.active { width: 26px; border-radius: 999px; background: var(--grad); }
+
+    /* bibtex */
+    .code-card { background: #05070d; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .code-head { display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
+    .code-head .traffic { display: flex; gap: 7px; }
+    .code-head .traffic span { width: 12px; height: 12px; border-radius: 50%; }
+    .code-head .traffic .r { background: #ff5f57; } .code-head .traffic .y { background: #febc2e; } .code-head .traffic .g { background: #28c840; }
+    .code-head .fname { color: var(--faint); font-size: .82rem; font-family: 'JetBrains Mono', monospace; margin-left: 6px; }
+    .copy-btn { margin-left: auto; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); padding: 6px 13px; border-radius: 8px; font-size: .8rem; cursor: pointer; transition: all .2s; display: inline-flex; align-items: center; gap: 6px; }
+    .copy-btn:hover { color: var(--text); border-color: var(--border-strong); }
+    .copy-btn.copied { color: var(--cyan); border-color: var(--cyan); }
+    pre { padding: 22px 20px; overflow-x: auto; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: .86rem; color: #c9d1e3; line-height: 1.7; }
+    code .k { color: var(--violet); } code .s { color: var(--cyan); } code .a { color: var(--pink); }
+
+    /* footer */
+    footer { padding: 50px 0 60px; border-top: 1px solid var(--border); text-align: center; color: var(--faint); font-size: .9rem; }
+    footer a { color: var(--muted); border-bottom: 1px dotted var(--faint); }
+    footer a:hover { color: var(--text); }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* responsive */
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .metrics { grid-template-columns: 1fr; }
+      section.block { padding: 60px 0; }
+      .abstract-card .quote-mark { display: none; }
+      .t-br { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progress"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">🪄 TMI<span class="dot">.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#vrain">VRAIN</a>
+        <a href="#results">Results</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+    <div class="orb c"></div>
+    <div class="wrap">
+      <span class="badge-venue"><span class="pulse"></span>ECCV 2026</span>
+      <h1 class="title">🪄 <span class="accent">TMI</span>: Text-to-Image Meets Image-to-Image<br class="t-br">
+        for Complementary Data Synthesis<br class="t-br">
+        to Boost Long-Tailed Instance Segmentation</h1>
+      <p class="subtitle-lead">A hybrid data-synthesis framework that couples T2I scene diversity with context-aware
+        I2I editing (<b>VRAIN</b>) to boost long-tailed instance segmentation on LVIS.</p>
+
+      <div class="authors">
+        <span class="au">Hyeonseop Song<sup>*</sup></span>
+        <span class="au">Seokhun Choi<sup>*</sup></span>
+        <span class="au">Hoseok Do<sup>&dagger;</sup></span>
+      </div>
+      <div class="affil">AI Lab, CTO Division, LG Electronics, Republic of Korea</div>
+      <div class="note"><sup>*</sup>Equal contribution <span class="sep">&middot;</span> <sup>&dagger;</sup>Corresponding author</div>
+
+      <div class="actions">
+        <a href="#" class="btn primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Paper
+        </a>
+        <a href="#" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+          arXiv
+        </a>
+      </div>
+    </div>
+    <a href="#abstract" class="scroll-cue"><span class="mouse"></span>Scroll</a>
+  </header>
+
+  <!-- TEASER -->
+  <section class="block" style="padding-top:20px">
+    <div class="wrap stack">
+      <div class="figure reveal">
+        <img src="static/images/figure_1_teaser.png" alt="Mutually complementary T2I-I2I data synthesis." />
+      </div>
+      <p class="caption center reveal">We present <b style="color:#fff">TMI</b>, a hybrid data synthesis framework that
+        couples <b style="color:#fff">text-to-image (T2I)</b> generation for scene diversity with context-aware
+        <b style="color:#fff">image-to-image (I2I)</b> editing for realistic, accurate rare-class supervision &mdash;
+        achieving state-of-the-art long-tailed instance segmentation on LVIS.</p>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="metrics">
+        <div class="metric reveal">
+          <div class="big" data-count="4.0" data-prefix="+" data-dec="1">+0.0</div>
+          <div class="lbl">Overall AP gain</div>
+          <div class="sub">up to, on LVIS</div>
+        </div>
+        <div class="metric reveal">
+          <div class="big" data-count="9.5" data-prefix="+" data-dec="1">+0.0</div>
+          <div class="lbl">Rare-class AP gain</div>
+          <div class="sub">up to, on LVIS</div>
+        </div>
+        <div class="metric reveal">
+          <div class="big">SOTA</div>
+          <div class="lbl">on LVIS benchmark</div>
+          <div class="sub">ResNet-50 &amp; Swin-L</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABSTRACT -->
+  <section class="block" id="abstract">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Overview</span>
+        <h2 class="heading">Abstract</h2>
+      </div>
+      <div class="abstract-card reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <p>
+          Large-vocabulary instance segmentation is constrained by long-tailed category distributions and fine-grained
+          inter-class ambiguity. While data synthesis offers a promising alternative, current paradigms have
+          complementary limitations: text-to-image (T2I) methods inherit noisy pseudo-labels and struggle on rare
+          classes, whereas copy-paste methods compromise contextual realism. To address these issues, we propose a
+          hybrid pipeline coupling T2I generation with context-aware image-to-image (I2I) editing. The T2I branch
+          provides broad category and scene diversity, while a teacher-student scheme ensures label reliability by
+          selectively retaining only prompt-specified categories. To strengthen supervision for rare classes, we
+          introduce <b>VRAIN</b> (<b>V</b>erified <b>R</b>are-class <b>A</b>ugmentation via <b>IN</b>structed editing),
+          a novel I2I editor. VRAIN inserts high-confidence instances at semantically appropriate locations within
+          in-the-wild scenes, yielding semantically coherent and visually natural edits that reduce domain gaps and
+          enable targeted augmentation. On the LVIS benchmark, our method surpasses existing baselines, improving
+          overall AP by up to <b>+4.0</b> points and rare-class AP by up to <b>+9.5</b> points, while scaling
+          effectively with backbone capacity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="block" id="method">
+    <div class="wrap stack">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 &mdash; Framework</span>
+        <h2 class="heading">Method Overview</h2>
+      </div>
+      <div class="figure reveal">
+        <img src="static/images/figure_2_overview.png"
+          alt="Overview of the hybrid data generation and training framework." />
+      </div>
+      <p class="caption reveal">
+        Overview of our hybrid data generation and training framework. We combine two complementary paradigms:
+        (i) <b style="color:#fff">T2I generation</b> for diverse scenes over all categories $C_\text{all}$, and
+        (ii) <b style="color:#fff">I2I editing (VRAIN)</b> for rare categories $C_\text{I2I}$ with accurate
+        instance-level supervision. (iii) A student $M_\text{student}$ jointly learns from both
+        $\mathcal{D}_{\text{T2I}}$ and $\mathcal{D}_{\text{I2I}}$. For T2I images $I_m$, an EMA teacher
+        $M_\text{teacher}$ generates refined pseudo-labels $\tilde{A}_m^\text{teacher}$, merged with offline labels
+        $A_{m}^\mathcal{P}$ to form the final supervision $A_m$. As training proceeds, the teacher adapts to the T2I
+        domain, progressively improving initially noisy pseudo-labels.
+      </p>
+    </div>
+  </section>
+
+  <!-- VRAIN -->
+  <section class="block" id="vrain">
+    <div class="wrap stack">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 &mdash; VRAIN</span>
+        <h2 class="heading">&ldquo;Place-and-Verify&rdquo; Pipeline</h2>
+        <p class="lead-text">A two-stage framework that inserts rare-class instances naturally, then rigorously
+          verifies every edit before it becomes supervision.</p>
+      </div>
+      <div class="figure reveal">
+        <img src="static/images/figure_3_vrain.png" alt="VRAIN place-and-verify pipeline." />
+      </div>
+      <p class="caption reveal">
+        Our two-stage framework ensures high-fidelity I2I editing.
+        <b style="color:#fff">(i) Place:</b> A VLM proposes a semantically coherent instruction ($inst^*$) for inserting
+        a rare class ($c^*$) that fits naturally within $I_\text{real}$. An instruction-based editor $\Phi_\text{I2I}$
+        then synthesizes $I_\text{edit}$.
+        <b style="color:#fff">(ii) Verify:</b> $I_\text{edit}$ is then validated. The new instance is localized via SSIM
+        difference and open-vocabulary detection, semantically confirmed by a VLM filter, and masked using SAM. Finally,
+        an annotation updater resolves occlusions with $A_\text{real}$, integrating the new instance to produce the
+        trustworthy final annotation $A_\text{edit}$.
+      </p>
+      <div class="figure reveal">
+        <img src="static/images/figure_6_VLM_verification.png"
+          alt="Qualitative examples of the VRAIN verification stage." />
+      </div>
+      <p class="caption reveal">
+        Qualitative examples of the VRAIN verification stage. (a) A <i>helmet</i> is added instead of the requested
+        <i>headset</i> ($c^*$), creating a semantic mismatch, and is thus filtered out; (b) the target <i>headset</i> is
+        correctly added, passing the verification.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="block" id="results">
+    <div class="wrap stack">
+      <div class="section-head center reveal">
+        <span class="eyebrow">03 &mdash; Experiments</span>
+        <h2 class="heading">Results</h2>
+        <p class="lead-text">Consistent state-of-the-art gains across backbones, with especially strong improvements on
+          rare categories.</p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="subhead">Comparison with Baselines on LVIS Validation</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Backbone</th><th>Method</th><th>T2I</th><th>I2I</th>
+                <th>AP<sup>box</sup></th><th>AP<sup>mask</sup></th>
+                <th>AP<sub>r</sub><sup>box</sup></th><th>AP<sub>r</sub><sup>mask</sup></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="5" class="rowname">ResNet-50</td><td class="rowname">Real-only</td><td>&ndash;</td><td>&ndash;</td><td>34.5</td><td>30.8</td><td>24.0</td><td>21.6</td></tr>
+              <tr><td class="rowname">MosaicFusion</td><td class="check">&#10003;</td><td></td><td>34.1</td><td>30.4</td><td>24.4</td><td>22.5</td></tr>
+              <tr><td class="rowname">DiverGen</td><td></td><td class="check">&#10003;</td><td>35.1</td><td>31.2</td><td>25.6</td><td>23.8</td></tr>
+              <tr><td class="rowname">X-Paste</td><td></td><td class="check">&#10003;</td><td>36.7</td><td>33.0</td><td>29.6</td><td>27.8</td></tr>
+              <tr class="ours"><td>Ours</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td>38.1</td><td>34.0</td><td>33.9</td><td>31.7</td></tr>
+              <tr><td rowspan="5" class="rowname">Swin-L</td><td class="rowname">Real-only</td><td>&ndash;</td><td>&ndash;</td><td>47.5</td><td>42.3</td><td>41.4</td><td>36.8</td></tr>
+              <tr><td class="rowname">MosaicFusion</td><td class="check">&#10003;</td><td></td><td>47.7</td><td>42.8</td><td>41.3</td><td>37.5</td></tr>
+              <tr><td class="rowname">DiverGen</td><td></td><td class="check">&#10003;</td><td>49.6</td><td>44.2</td><td>44.5</td><td>39.8</td></tr>
+              <tr><td class="rowname">X-Paste</td><td></td><td class="check">&#10003;</td><td>50.1</td><td>44.4</td><td>48.2</td><td>43.3</td></tr>
+              <tr class="ours"><td>Ours</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td>50.7</td><td>45.2</td><td>49.1</td><td>44.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">Our hybrid T2I-I2I approach consistently outperforms all baselines: the Real-only model, the
+          T2I-only method (MosaicFusion), and copy-paste I2I methods (DiverGen, X-Paste). This holds across both
+          ResNet-50 and Swin-L backbones, delivering particularly strong gains on rare-class metrics.</p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="subhead">Comparison with Rare-class-targeted Data Synthesis (Swin-L)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th><th>AP<sup>box</sup></th><th>AP<sup>mask</sup></th>
+                <th>AP<sub>r</sub><sup>box</sup></th><th>AP<sub>r</sub><sup>mask</sup></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowname">Real-only</td><td>47.5</td><td>42.3</td><td>41.4</td><td>36.8</td></tr>
+              <tr><td class="rowname">MosaicFusion</td><td>47.7</td><td>42.8</td><td>41.3</td><td>37.5</td></tr>
+              <tr><td class="rowname">DiverGen (rare-target)</td><td>47.3</td><td>42.2</td><td>34.5</td><td>31.2</td></tr>
+              <tr class="ours"><td>D<sub>I2I</sub> only (VRAIN)</td><td>48.1</td><td>43.3</td><td>42.9</td><td>39.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">Among methods generating data exclusively for rare categories, DiverGen shows <i>decreased</i>
+          rare-class performance due to reduced realism (AP<sub>r</sub><sup>box</sup> 41.4 &rarr; 34.5), whereas our I2I
+          approach (VRAIN) effectively improves rare-class performance with high visual fidelity and accurate labels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADAPTATION -->
+  <section class="block">
+    <div class="wrap stack">
+      <div class="section-head reveal">
+        <span class="eyebrow">04 &mdash; Teacher-Student</span>
+        <h2 class="heading">Progressive Pseudo-label Adaptation</h2>
+      </div>
+      <div class="figure reveal">
+        <img src="static/images/figure_5_teacher_adaptation.png"
+          alt="Examples of pseudo-label adaptation in T2I images." />
+      </div>
+      <p class="caption reveal">
+        Examples of pseudo-label adaptation in T2I images. As the teacher model updates, it adapts to the T2I domain and
+        enhances pseudo-label quality &mdash; improving masks and labeling previously missed objects (e.g.,
+        <i>quesadilla</i>, <i>telephoto lens</i>) for rare categories.
+      </p>
+      <div class="figure reveal">
+        <img src="static/images/figure_4_final_supervision.png"
+          alt="Examples of final pseudo-labels for T2I images." />
+      </div>
+      <p class="caption reveal">
+        Final pseudo-labels for T2I images. Teacher-generated pseudo-labels (red) are merged ($\oplus$) with offline
+        pseudo-labels (blue) to form the final supervision. As the teacher adapts to the T2I domain, it successfully
+        labels rare classes such as <i>dove</i> and <i>walrus</i>.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY / CAROUSEL -->
+  <section class="block" id="gallery">
+    <div class="wrap stack">
+      <div class="section-head center reveal">
+        <span class="eyebrow">05 &mdash; Gallery</span>
+        <h2 class="heading">More VRAIN (I2I) Results</h2>
+        <p class="lead-text">Additional rare-class insertions produced by our I2I editing pipeline.</p>
+      </div>
+
+      <div class="carousel reveal" id="carousel">
+        <button class="car-btn prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="track">
+            <div class="slide"><img src="static/images/i2i_more_result_1.jpg" alt="I2I dataset examples 1." /></div>
+            <div class="slide"><img src="static/images/i2i_more_result_2.jpg" alt="I2I dataset examples 2." /></div>
+            <div class="slide"><img src="static/images/i2i_more_result_3.jpg" alt="I2I dataset examples 3." /></div>
+            <div class="slide"><img src="static/images/i2i_more_result_4.jpg" alt="I2I dataset examples 4." /></div>
+            <div class="slide"><img src="static/images/i2i_more_result_5.jpg" alt="I2I dataset examples 5." /></div>
+            <div class="slide"><img src="static/images/i2i_more_result_6.jpg" alt="I2I dataset examples 6." /></div>
+          </div>
+        </div>
+        <button class="car-btn next" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="dots" id="dots"></div>
+      </div>
+      <p class="caption reveal">Each example shows, in order, the original image $I_\text{real}$, the original
+        annotation $A_\text{real}$, the edited image $I_\text{edit}$, and the final annotation $A_\text{edit}$ (after VLM
+        verification and SAM mask integration). VRAIN inserts rare-class objects naturally while preserving annotation
+        quality.</p>
+    </div>
+  </section>
+
+  <!-- BIBTEX -->
+  <section class="block" id="bibtex">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cite</span>
+        <h2 class="heading">BibTeX</h2>
+      </div>
+      <div class="code-card reveal">
+        <div class="code-head">
+          <span class="traffic"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+          <span class="fname">tmi.bib</span>
+          <button class="copy-btn" id="copyBtn">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy</span>
+          </button>
+        </div>
+<pre><code id="bib"><span class="k">@article</span>{<span class="a">song2026tmi</span>,
+  <span class="k">title</span>   = {<span class="s">TMI: Text-to-Image Meets Image-to-Image for Complementary Data Synthesis to Boost Long-Tailed Instance Segmentation</span>},
+  <span class="k">author</span>  = {<span class="s">Song, Hyeonseop and Choi, Seokhun and Do, Hoseok</span>},
+  <span class="k">year</span>    = {<span class="s">2026</span>}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 TMI</p>
+    </div>
+  </footer>
+
+  <script>
+    // scroll progress + nav state
+    const nav = document.getElementById('nav');
+    const progress = document.getElementById('progress');
+    const navAnchors = [...document.querySelectorAll('.nav-links a')];
+    const sections = navAnchors.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      const st = window.scrollY;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (st / h * 100) + '%';
+      nav.classList.toggle('scrolled', st > 30);
+
+      let cur = sections[0];
+      for (const s of sections) { if (s.getBoundingClientRect().top <= 120) cur = s; }
+      navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + (cur && cur.id)));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // count-up metrics
+    const counters = document.querySelectorAll('[data-count]');
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.dataset.count);
+        const dec = parseInt(el.dataset.dec || '0');
+        const prefix = el.dataset.prefix || '';
+        const dur = 1300; const t0 = performance.now();
+        function tick(t) {
+          const p = Math.min(1, (t - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + (target * eased).toFixed(dec);
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(c => cio.observe(c));
+
+    // carousel
+    (function () {
+      const track = document.getElementById('track');
+      const slides = [...track.children];
+      const dotsWrap = document.getElementById('dots');
+      let idx = 0;
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(b);
+      });
+      const dots = [...dotsWrap.children];
+      function go(i) {
+        idx = (i + slides.length) % slides.length;
+        track.style.transform = `translateX(-${idx * 100}%)`;
+        dots.forEach((d, k) => d.classList.toggle('active', k === idx));
+      }
+      document.querySelector('.car-btn.prev').addEventListener('click', () => go(idx - 1));
+      document.querySelector('.car-btn.next').addEventListener('click', () => go(idx + 1));
+      let timer = setInterval(() => go(idx + 1), 6000);
+      document.getElementById('carousel').addEventListener('mouseenter', () => clearInterval(timer));
+      document.getElementById('carousel').addEventListener('mouseleave', () => timer = setInterval(() => go(idx + 1), 6000));
+      go(0);
+    })();
+
+    // copy bibtex
+    document.getElementById('copyBtn').addEventListener('click', function () {
+      const text = document.getElementById('bib').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        this.classList.add('copied');
+        this.querySelector('span').textContent = 'Copied!';
+        setTimeout(() => { this.classList.remove('copied'); this.querySelector('span').textContent = 'Copy'; }, 1800);
+      });
+    });
+  </script>
+</body>
+
+</html>

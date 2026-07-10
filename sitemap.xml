@@ -37,6 +37,16 @@
 </url>
 
 <url>
+  <loc>https://seokhunchoi.github.io/PoseSyn/</loc>
+  <lastmod>2026-07-10T02:39:38+00:00</lastmod>
+  <priority>1.00</priority>
+
+  <image:image>
+    <image:loc>https://seokhunchoi.github.io/PoseSyn/static/images/teaser.png</image:loc>
+  </image:image>
+</url>
+
+<url>
   <loc>https://seokhunchoi.github.io/Click-Gaussian/</loc>
   <lastmod>2024-07-17T01:31:01+00:00</lastmod>
   <priority>1.00</priority>

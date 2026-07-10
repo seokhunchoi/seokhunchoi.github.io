@@ -65,6 +65,52 @@
 				
 <!-- Works listed here -->      
 
+<!-- TMI -->
+<tr onmouseout="TMI_stop()" onmouseover="TMI_start()">
+  <td style="padding:5px 6px 5px 20px;width:28%;vertical-align:middle">
+      <!-- IMAGES -->
+      <div class="one">
+        <div class="two" id="TMI_under" style="opacity: 1; margin-top:46px">
+          <img src="TMI/static/images/figure_2_overview.png" width="240"
+          alt="Overview of TMI">
+        </div>
+        <div class="two" id="TMI_hover" style="opacity: 0; margin-top:43px">
+          <img src="images/TMI_teaser_1.png" width="240"
+          alt="Overview of TMI">
+        </div>
+      </div>
+      <!-- SCRIPT FOR HOVERING -->
+      <script type="text/javascript">
+        function TMI_start() {
+          document.getElementById('TMI_hover').style.opacity = "1";
+          document.getElementById('TMI_under').style.opacity = "0";
+        }
+
+        function TMI_stop() {
+          document.getElementById('TMI_hover').style.opacity = "0";
+          document.getElementById('TMI_under').style.opacity = "1";
+        }
+        TMI_stop()
+      </script>
+    </td>
+<td style="padding:5px 20px 5px 6px;width:72%;vertical-align:middle">
+  <!-- TITLE -->
+  <a href="https://seokhunchoi.github.io/TMI"><papertitle>TMI: Text-to-Image Meets Image-to-Image for Complementary Data Synthesis to Boost Long-Tailed Instance Segmentation</papertitle></a>
+  <br>
+  <!-- AUTHORS -->
+  Hyeonseop Song*, <b>Seokhun Choi*</b>, Hoseok Do
+  <br>
+  *Equal contribution
+  <!-- CONFERENCE -->
+  <br>
+  <em>ECCV</em> 2026 - <a href="https://arxiv.org/abs/2607.08201">arXiv</a> / <a href="https://seokhunchoi.github.io/TMI">Project</a> / <a href="https://arxiv.org/pdf/2607.08201">Paper</a>
+  <p></p>
+  <!-- SUMMARY -->
+  We present TMI, a hybrid data synthesis framework that couples text-to-image generation with context-aware image-to-image editing (VRAIN) to boost long-tailed instance segmentation, achieving state-of-the-art results on LVIS.
+</td>
+</tr>
+
+
 <!-- PoseSyn -->
 <tr onmouseout="PoseSyn_stop()" onmouseover="PoseSyn_start()">
   <td style="padding:5px 6px 5px 20px;width:28%;vertical-align:middle">
